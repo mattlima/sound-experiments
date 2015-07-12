@@ -1,0 +1,49 @@
+
+
+<div ng-controller="AudioContextExperiment as C">
+
+    <table>
+    	<thead>
+    		<tr><th colspan="2">Audio Context</th></tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>State</td>
+    			<td>{{ C.audCtxt.state }}</td>
+    		</tr>
+    		<tr>
+    			<td>Sample rate</td>
+    			<td>{{ C.audCtxt.sampleRate }}</td>
+    		</tr>
+    		<tr>
+    			<td>Destination max channel count</td>
+    			<td>{{ C.destination_node.maxChannelCount }}</td>
+    		</tr>
+    		<tr>
+    			<td>Context time</td>
+    			<td>{{ C.audCtxt.currentTime }}</td>
+    		</tr>
+    	</tbody>
+    </table>
+
+    <table>
+    	<thead>
+    		<tr><th colspan="2">Oscillator</th></tr>
+    	</thead>
+    	<tbody>
+    		<tr>
+    			<td>Freq.</td>
+    			<td>{{ C.oscillator.frequency.value }}</td>
+    		</tr>
+    		<tr>
+    			<td>Type</td>
+    			<td>{{ C.oscillator.type }}</td>
+    		</tr>
+    		<tr>
+    			<td>State</td>
+    			<td>{{ C.oscillator.state }} <input type='button' ng-click="on_off()" value="toggle"></td>
+    		</tr>
+    	</tbody>
+    </table>
+
+</div>

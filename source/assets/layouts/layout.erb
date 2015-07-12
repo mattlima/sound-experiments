@@ -11,6 +11,10 @@
 
     <%= stylesheet_link_tag "normalize", "all" %>
     <%= javascript_include_tag  "general" %>
+
+
+      <%= yield_content :assets %>
+
   </head>
 
   <body class="<%= page_classes %>">

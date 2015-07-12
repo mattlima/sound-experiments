@@ -24,12 +24,12 @@
 #   page "/admin/*"
 # end
 
-data.experiments.each do |experiment_group|
-  experiment_group = experiment_group.symbolize_keys
-  experiment_group[:members].each do |experiment|
-    proxy "/experiments/#{experiment_group[:slug]}/#{experiment[:slug]}/index.html", "/views/test.html", locals: experiment
-  end
-end
+# data.experiments.each do |experiment_group|
+#   experiment_group = experiment_group.symbolize_keys
+#   experiment_group[:members].each do |experiment|
+#     proxy "/experiments/#{experiment_group[:slug]}/#{experiment[:slug]}/index.html", "/views/test.html", locals: experiment
+#   end
+# end
 
 ###
 # Helpers

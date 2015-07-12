@@ -2,14 +2,14 @@
 title: Index
 ---
 
-  <ul>
-    <% data.experiments.each_index do |i| %>
-        <% data.experiments[i][:members].each_index do |j| %>
-          <li>
-            <h2><%= "#{i+1}.#{j+1} - #{data.experiments[i][:members][j][:name]}" %></h2>
 
-          </li>
-        <% end %>
-    <% end %>
+  <ul>
+    <% sitemap.resources.each do |r|
+        next unless r.metadata[:page]["type"] == "experiment"
+
+    %>
+
+		<li><%= link_to r.metadata[:page]["title"],  r.url %></li>
+	<% end %>
   </ul>
 
