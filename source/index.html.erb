@@ -1,10 +1,15 @@
 ---
-title: Welcome to Middleman
+title: Index
 ---
 
-<div class="welcome">
-  <h1>Middleman is Watching</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p><!-- .doc -->
-</div><!-- .welcome -->
+  <ul>
+    <% data.experiments.each_index do |i| %>
+        <% data.experiments[i][:members].each_index do |j| %>
+          <li>
+            <h2><%= "#{i+1}.#{j+1} - #{data.experiments[i][:members][j][:name]}" %></h2>
+
+          </li>
+        <% end %>
+    <% end %>
+  </ul>
+

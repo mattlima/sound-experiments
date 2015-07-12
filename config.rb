@@ -24,9 +24,12 @@
 #   page "/admin/*"
 # end
 
-# Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
+data.experiments.each do |experiment_group|
+  experiment_group = experiment_group.symbolize_keys
+  experiment_group[:members].each do |experiment|
+    proxy "/experiments/#{experiment_group[:slug]}/#{experiment[:slug]}/index.html", "/views/test.html", locals: experiment
+  end
+end
 
 ###
 # Helpers
@@ -47,13 +50,17 @@
 #   end
 # end
 
-set :css_dir, 'stylesheets'
+set :css_dir, 'assets/stylesheets'
 
-set :js_dir, 'javascripts'
+set :js_dir, 'assets/javascripts'
 
-set :images_dir, 'images'
+set :images_dir, 'assets/images'
 
-activate :livereload
+set :layouts_dir, 'assets/layouts'
+
+# activate :livereload
+
+activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
@@ -64,7 +71,7 @@ configure :build do
   # activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets

@@ -1,0 +1,9 @@
+[
+	{ 	"name" : "Basic",
+    	"slug" : "1",
+		"members" : [
+			{ "name" : "File to destination node 1", "slug" : "file-to-destination-node-1" },
+			{ "name" : "File to destination node 2", "slug" : "file-to-destination-node-2" }
+		]
+	}
+]
