@@ -1,0 +1,22 @@
+{
+  "name": "sound-experiments",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mattlima/sound-experiments",
+  "authors": [
+    "Matt Lima <matt@3-tone.com>"
+  ],
+  "description": "playing around with AudioContext",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
