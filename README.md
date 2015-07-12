@@ -3,10 +3,13 @@
 ## Dependencies
 
 *	Middleman
+*	Bower
 
 ## Get your act together
 
 `bundle install`
+
+`bower install`
 
 `bundle exec middleman server`
 
