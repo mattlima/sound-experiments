@@ -1,0 +1,13 @@
+<% content_for :assets do %>
+  <%= javascript_include_tag 'angular-ctrl' %>
+<% end %>
+
+
+<div ng-app="Audio_Experiment">
+	<div ng-controller="AudioContextExperiment as C">
+		<h1>{{ C.oscillator.start() }} </h1>
+		
+    </div>
+
+
+</div>

@@ -1,0 +1,51 @@
+@import "normalize";
+@import "all";
+
+$bright-highlight: #FF0000;
+
+body {
+      background: url(/assets/images/wave.gif);
+      background-size: cover;
+      vertical-align: middle;
+      height: 100vh;
+      width: 100vw;
+      font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
+    }
+    h1 {
+      color: transparent;
+      font-size: 9vw;
+      text-align: center;
+      position: absolute;
+      top: 50%; 
+       transform: translateY(-50%);
+       -webkit-animation: shadowDancer 2s infinite; /* Chrome, Safari, Opera */
+       -moz-animation: shadowDancer 2s infinite; /* Firefox */
+       -ms-animation: shadowDancer 2s infinite; /* Explorer */
+       animation: shadowDancer 2s infinite;
+       -webkit-animation-direction: alternate; /* Chrome, Safari, Opera */
+       -moz-animation-direction: alternate; /* Firefox */
+       -ms-animation-direction: alternate; /* Explorer */
+        animation-direction: alternate; 
+    
+    }
+    
+        /* Chrome, Safari, Opera */
+    @-webkit-keyframes shadowDancer {
+        from {text-shadow: 0 0 40px rgba(0,0,0,7); top: 50%; left: 1px}
+        to {text-shadow: 0 0 10px rgba(0,0,0,0.5); top: 51%; left: 0;}
+    }
+    
+    -moz-keyframes shadowDancer {
+        from {text-shadow: 0 0 40px rgba(0,0,0,7); top: 50%; left: 1px}
+        to {text-shadow: 0 0 10px rgba(0,0,0,0.5); top: 51%; left: 0;}
+    }
+    
+    -ms-keyframes shadowDancer {
+        from {text-shadow: 0 0 40px rgba(0,0,0,7); top: 50%; left: 1px}
+        to {text-shadow: 0 0 10px rgba(0,0,0,0.5); top: 51%; left: 0;}
+    }
+    
+    @keyframes shadowDancer {
+        from {text-shadow: 0 0 40px rgba(0,0,0,7); top: 50%; left: 1px}
+        to {text-shadow: 0 0 10px rgba(0,0,0,0.5); top: 51%; left: 0;}
+    }
