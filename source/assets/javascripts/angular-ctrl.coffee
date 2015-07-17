@@ -20,7 +20,6 @@ AudioContextExperiment = ($scope, $http) ->
       $scope.oscillator.state = 'stopped'
       $scope.oscillator.stop()
 
-  $scope
 
 
 
