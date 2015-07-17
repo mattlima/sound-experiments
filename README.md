@@ -9,11 +9,17 @@
 
 `bundle install`
 
+`git submodule init`
+
+`git submodule update`
+
 `bower install`
 
-`bundle exec middleman server`
+`middleman`
 
 ## Get the pahty stahted
 
 http://127.0.0.1:4567/
+
+Don't forget you might need to pull updates to the moog code: `git submodule update --remote`
 

@@ -1,0 +1,3 @@
+[submodule "source/assets/javascripts/lib/mooog"]
+	path = source/assets/javascripts/lib/mooog
+	url = https://github.com/mattlima/mooog.git
