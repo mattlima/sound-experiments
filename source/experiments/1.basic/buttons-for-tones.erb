@@ -1,0 +1,37 @@
+---
+title: "Buttons for tones"
+type: experiment
+---
+<style>
+    .tone-button{
+        height:250px;
+        width:250px;
+        display:inline-block;
+        border:thin solid #CCC;
+        background: #DDD;
+    }
+</style>
+
+<h1><%= current_page.data.title %></h1>
+
+<button class="tone-button" data-freq="150"></button>
+<button class="tone-button" data-freq="200"></button>
+<button class="tone-button" data-freq="250"></button>
+<button class="tone-button" data-freq="300"></button>
+<button class="tone-button" data-freq="350"></button>
+
+
+<script>
+(function(){
+    M = new Mooog();
+    osc = M.node('osc','Oscillator');
+    $(document)
+    .on('mousedown','.tone-button',function(){
+        osc.start().param('frequency',$(this).data('freq'));
+    })
+    .on('mouseup','.tone-button',function(){
+        osc.stop();
+    })
+
+})(window)
+</script>
