@@ -8,6 +8,8 @@
 
     <!-- Use title if it's in the page YAML frontmatter -->
     <title><%= current_page.data.title || "Dig" %></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <%= javascript_include_tag 'lib/mooog/dist/mooog.min.js' %>
 
     <%= stylesheet_link_tag "normalize", "all" %>
     <%= javascript_include_tag  "general" %>
