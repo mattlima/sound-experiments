@@ -1,0 +1,45 @@
+---
+title: "Testing react"
+type: experiment
+---
+
+<% content_for :assets do
+    stylesheet_link_tag "fretboard"
+end %>
+<% content_for :assets do
+    javascript_include_tag "react-test"
+end %>
+
+<% content_for :assets do %>
+
+
+<% end %>
+
+
+<h1><%= current_page.data.title %></h1>
+
+<a href="#" class="button square" id="on">On</a>
+<a href="#" class="button square" id="off">Off</a>
+
+<span id="mousepos"></span>
+
+
+    <div id="content"></div>
+<!--
+    <script type="text/jsx">
+      var CommentBox = React.createClass({
+          render: function() {
+            return (
+              <div className="commentBox">
+                Hello, world! I am a CommentBox.
+              </div>
+            );
+          }
+        });
+        React.render(
+          <CommentBox />,
+          document.getElementById('content')
+        );
+    </script>
+-->
+

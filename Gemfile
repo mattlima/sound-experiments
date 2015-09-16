@@ -14,3 +14,7 @@ gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
 gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 
 gem "pry", "0.10.1"
+
+gem "middleman-react", "~> 0.13.3"
+
+gem "sprockets-coffee-react"

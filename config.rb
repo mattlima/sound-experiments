@@ -1,3 +1,9 @@
+require 'sprockets/coffee-react'
+
+::Sprockets.register_preprocessor 'application/javascript', ::Sprockets::CoffeeReact
+::Sprockets.register_engine '.cjsx', ::Sprockets::CoffeeReactScript
+::Sprockets.register_engine '.js.cjsx', ::Sprockets::CoffeeReactScript
+
 ###
 # Compass
 ###
@@ -62,6 +68,13 @@ set :layouts_dir, 'assets/layouts'
 
 activate :directory_indexes
 
+#Compile jsx files
+activate :react
+
+after_configuration do
+  sprockets.append_path File.dirname(::React::Source.bundled_path_for('react.js'))
+end
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -79,3 +92,8 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+
+#after_configuration do
+#  sprockets.append_path File.dirname(::React::Source.bundled_path_for('react.js'))
+#end
