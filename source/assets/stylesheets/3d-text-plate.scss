@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic);
+
+@mixin crimson(){
+  font-family: 'Crimson Text', serif;
+}
+
+html,body{
+  background-color:#111;
+  color: #DDD;
+  perspective: 600px;
+  height:100vh;
+  overflow: hidden;
+}
+
+
+h1{
+  margin-bottom:20px;
+}
+
+div.handle{
+  width:0;
+  margin:0 auto;
+}
+div.poem{
+  font-size:12rem;
+  @include crimson;
+  pre{ @include crimson; }
+  margin:0 auto;
+  width:210rem;
+//   border:thin solid white;
+  > div{
+    color: rgba(255,255,255,0);
+    text-shadow: 0px 0px 0px rgba(255,255,255,1.0);
+  }
+}

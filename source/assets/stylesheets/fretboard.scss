@@ -5,10 +5,10 @@
 }
 .fret-contain{
   min-height: 400px;
-  height: 50vh;
+  height: 80vh;
   max-height: 800px;
   min-width: 400px;
-  width: 50vh;
+  width: 80vh;
   max-width: 800px;
   border:thin solid red;
   position: relative;
@@ -35,4 +35,14 @@ a.square{
  color: white;
  padding: 5px;
  margin: 5px;
+}
+
+.tone-button{
+  box-sizing: border-box;
+  border:thin solid green;
+  float:left;
+  transition: background-color 0.5s;
+  &.active{
+    background-color:green;
+  }
 }

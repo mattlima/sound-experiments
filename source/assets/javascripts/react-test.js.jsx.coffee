@@ -27,15 +27,6 @@ throttle = (func, interval) ->
     @timeout = setTimeout(later, interval, event)
 
 
-
-tt = (e)->
-  note1 = Mooog.freq(Math.round((e.pageX / $(window).width()) * 40) + 30)
-  osc1.param({'frequency': note1, from_now: true, ramp: 'expo', at: 0.25 })
-  note2 = Mooog.freq(Math.round((e.pageY / $(window).height()) * 40) + 30)
-  osc2.param({'frequency': note2, from_now: true, ramp: 'expo', at: 0.25 })
-  $("#mousepos").text "#{note1} / #{note2}"
-
-
 M = new Mooog()
 M.node
   id: 'osc1'
@@ -51,26 +42,60 @@ M.node
 osc1 = M.node('osc1')
 osc2 = M.node('osc2')
 
-$(document)
-.on "click", "#on", () ->
-  osc1.start()
-  osc2.start()
-.on "click", "#off", () ->
-  osc1.stop()
-  osc2.stop()
-.on "mousemove", throttle(tt, 100)
 
-.ready ()->
+makeGrid = (container, divs) ->
+  c = $(container)
+  w = (100 / divs) + "%"
+  for i in [divs..1]
+    for j in [1..divs]
+      c.append $("<div class='tone-button x-#{j} y-#{i}' style='height:#{w};width:#{w};'>")
+  false
 
-  CommentBox = React.createClass
+
+$(document).ready ()->
+
+  gridsize = 5
+  makeGrid '.fret-contain', gridsize
+  notes = [60,62,64,65,67,69,71,72]
+
+  tt = (e)->
+    c = $(".fret-contain")
+    o = c.offset()
+    {left, top} = o
+    x = (e.pageX - left) / c.width()
+    x = if x > 1 then gridsize-1 else Math.floor(x * gridsize)
+    y = 1 - ((e.pageY - top) / c.height())
+    y = if y > 1 then gridsize-1 else Math.floor(y * gridsize)
+    note1 = Mooog.freq(notes[x])
+    osc1.param({'frequency': note1, from_now: true, ramp: 'expo', at: 0.15 })
+    note2 = Mooog.freq(notes[y])
+    osc2.param({'frequency': note2, from_now: true, ramp: 'expo', at: 0.15 })
+    $(".tone-button.active").removeClass('active');
+    $(".tone-button.x-#{x+1}.y-#{y+1}").addClass('active');
+    React.render(
+      <NumberSpan label='x' number={x} />,
+      document.getElementById('mouseposX')
+    )
+    React.render(
+      <NumberSpan label='y' number={y} />,
+      document.getElementById('mouseposY')
+    )
+
+  NumberSpan = React.createClass
     render: ->
       return (
-        <div className="commentBox">
-        Hello, world! I am a CommentBox.
+        <div className="numberSpan">
+        {this.props.label}: {this.props.number}
         </div>
       )
 
-  React.render(
-    <CommentBox />,
-    document.getElementById('content')
-  )
+
+
+  $(document)
+    .on "click", "#on", () ->
+      osc1.start()
+      osc2.start()
+    .on "click", "#off", () ->
+      osc1.stop()
+      osc2.stop()
+    .on "mousemove", ".fret-contain", throttle(tt, 50)

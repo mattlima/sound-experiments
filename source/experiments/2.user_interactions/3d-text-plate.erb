@@ -1,0 +1,32 @@
+---
+title: "3d text plate"
+type: experiment
+---
+
+<% content_for :assets do
+    stylesheet_link_tag "3d-text-plate"
+end %>
+<% content_for :assets do
+    javascript_include_tag "3d-text-plate"
+end %>
+<% content_for :assets do
+    javascript_include_tag "lib/gsap/src/minified/TweenMax.min"
+end %>
+
+<% content_for :assets do
+    javascript_include_tag "lib/gsap/src/minified/utils/SplitText.min"
+end %>
+
+
+<h1><%= current_page.data.title %></h1>
+
+<div class="handle">
+    <div class="center">
+
+    </div>
+</div>
+<div class="poem">
+<h2>LIGHTHOUSE</h2>
+
+<pre><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;All this summer fun.<br>The big waves, and waiting<br>(the moon is broken)<br>for the moon to come out<br>and revive the water.&nbsp;&nbsp;You look<br>and you want to watch as<br>men feel the beer breaking<br>on their lips, and women seem like<br>the sun on your little back.<br>Where are you closer to everything?<br>in the plants?&nbsp;&nbsp;on the photograph or<br>the little heart that's not<br><br>used to beating like the waves' foam?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A wasp is<br>looking for a hole in the screen.<br>No.&nbsp;&nbsp;There's no man in the lighthouse.<br>There's no woman there, but there is<br>a light there; it's a bulb.<br>And I think how complete you are<br>in its light.&nbsp;&nbsp;Flash......... Flash.....<br>....................................<br>And I think of how our own room<br>will smell; You lying on one bed<br>and we in the other,<br>facing the... flash.....<br>.....................Flash<br></pre>
+</div>
